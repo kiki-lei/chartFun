@@ -10,6 +10,9 @@ var server = ws.createServer(function(conn) {
     msg.type = "enter";
     msg.data = conn.nickname + " is coming!";
     boardcast(JSON.stringify(msg));
+    var total = {};
+    total.data = "There are " + userCount + " participants";
+    boardcast(JSON.stringify(total));
     conn.on('text', function(str) {
         console.log("Received " + str);
         var msg = {};
@@ -23,6 +26,9 @@ var server = ws.createServer(function(conn) {
         msg.type = "leave";
         msg.data = conn.nickname + " is leaving!";
         boardcast(JSON.stringify(msg));
+        var total = {};
+        total.data = "There are " + (userCount - 1) + " participants";
+        boardcast(JSON.stringify(total));
     })
     conn.on('error', function(err) {
         console.log("handler error!");
