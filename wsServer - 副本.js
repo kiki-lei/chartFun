@@ -12,9 +12,6 @@ var server = ws.createServer(function(conn) {
     boardcast(JSON.stringify(msg));
     conn.on('text', function(str) {
         console.log("Received " + str);
-        console.log(typeof str);
-        console.log(str);
-
         var msg = {};
         msg.type = "message";
         msg.data = conn.nickname + " says: " + str;

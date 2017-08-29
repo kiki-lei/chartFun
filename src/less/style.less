@@ -22,21 +22,20 @@ body {
     bottom: 0;
     z-index: 1;
     text-align: center;
+    .title {
+        font-size: 200%;
+        color: #fff;
+    }
+    .form {
+        height: 100px;
+        margin-top: -100px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 100%;
+    }
 }
 
-#loginBox .form {
-    height: 100px;
-    margin-top: -100px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%;
-}
-
-#loginBox .title {
-    font-size: 200%;
-    color: #fff;
-}
 
 #nickname {
     font-size: 200%;
@@ -67,14 +66,19 @@ h2#title {
 input#sendTxt {
     width: 100%;
     border-radius: 3px;
-    border: 1px solid #ccc;
+    border: 1px solid #CCCCCC;
     height: 32px;
     line-height: 32px;
     text-indent: .7em;
+    &:active,
+    &:focus {
+        border-color: #bbbbbb;
+        outline: none;
+    }
 }
 
 a#sendBtn {
-    background-color: pink;
+    background-color: #ff7990;
     color: #ffffff;
     border-radius: 3px;
     line-height: 30px;
@@ -84,8 +88,16 @@ a#sendBtn {
     top: 16px;
     right: 16px;
     padding: 0 25px;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten(#ff7990, 3%);
+    }
 }
 
-a#sendBtn:hover {
-    cursor: pointer;
+#infoBox {
+    height: 663px;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    line-height: 24px;
 }

@@ -22,5 +22,8 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
     "less": "^2.7.2"
+  },
+  "dependencies": {
+    "nodejs-websocket": "^1.7.1"
   }
 }

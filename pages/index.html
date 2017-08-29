@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My chartroom</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../dist/css/style.min.css">
 </head>
 
 <body>
     <h2 id="title">My chartroom</h2>
     <div class="" id="loginBox">
         <div class="form">
-            <h3 class="title">What's your nickname?</h3>
+            <h3 class="title">Say "hello" ?</h3>
             <input type="text" name="nickname" maxlength="14" id="nickname">
         </div>
     </div>
     <div id="funBox">
-        <input type="text" id="sendTxt" placeholder="Say something..">
+        <input type="text" id="sendTxt" name="infoText" placeholder="Say something..">
         <a id="sendBtn">Send</a>
     </div>
 
-    <div id="recv"></div>
-    <div id="infoBox"></div>
 
-    <script type="text/javascript" src="chat.js"></script>
+    <div id="infoBox">
+        <div id="recv"></div>
+    </div>
+
+    <script type="text/javascript" src="../dist/js/chat.min.js"></script>
 
 </body>
 

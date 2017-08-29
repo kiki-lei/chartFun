@@ -21,6 +21,7 @@ gulp.task('serve', ['less'], function() {
     gulp.watch("./pages/*.html").on('change', reload);
     gulp.watch("./dist/js/*.js").on('change', reload);
     gulp.watch("./dist/css/*.css").on('change', reload);
+    gulp.watch('src/js/*.js', ['script']);
 });
 
 
@@ -58,6 +59,9 @@ gulp.task('imagemin', function() {
  */
 gulp.task('script', function() {
     gulp.src('./src/js/*.js')
+        .pipe(babel({
+            presets: ['env']
+        }))
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(sourcemaps.write("."))
@@ -70,6 +74,12 @@ gulp.task('script', function() {
  *
  */
 
-gulp.task('dev', ['serve'], function() {
+gulp.task('dev', ['serve'], function() {});
+
+gulp.task('dev2', function() {
     gulp.watch('src/js/*.js', ['script']);
+    gulp.watch("./src/less/**/*.less", ['less']);
+    gulp.watch("./pages/*.html").on('change', reload);
+    gulp.watch("./dist/js/*.js").on('change', reload);
+    gulp.watch("./dist/css/*.css").on('change', reload);
 });
